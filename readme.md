@@ -15,4 +15,4 @@ Start server:
 
     node server.js
 
-Now you can open your browser at http://localhost:3000 and use client.
+Now you can open your browser at [http://localhost:3000](http://localhost:3000) and use client.
