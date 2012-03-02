@@ -10,7 +10,7 @@
             <fieldset>
                 <legend>Authorization</legend>
                 <div class="control-group">
-                    <input id="host" type="text" placeholder="Host" value="http://greatiful.local">
+                    <input id="host" type="text" placeholder="Host" value="http://great.com">
                     <input id="consumer_key" type="text" placeholder="Key" value="key1">
                     <input id="consumer_secret" type="text" placeholder="Secret" value="secret1">
                 </div>
@@ -25,7 +25,7 @@
             <fieldset>
                 <legend>API Testing</legend>
                 <div class="control-group">
-                    <input type='text' id='url' placeholder="Url" value="/api/">
+                    <input type='text' id='url' placeholder="Url" value="/api/user/info.json">
                     <select id="method">
                             <option value="get" selected> get </option>
                             <option value="post"> post </option>
@@ -53,8 +53,14 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojo/dojo.xd.js" type="text/javascript" 
         djConfig="parseOnLoad:true"></script>
+        
+    <!--    
     <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script> 
     <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
+    -->
+
+    <script type="text/javascript" src="sha1.js"></script> 
+    <script type="text/javascript" src="oauth.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

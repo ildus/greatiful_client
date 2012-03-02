@@ -23,7 +23,7 @@ function get_by_url(e) {
         params.oauth_token = dojo.byId('access_token').value;
         params.oauth_timestamp = OAuth.timestamp();
         params.oauth_nonce = OAuth.nonce(11);
-        params.oauth_consumer_key = dojo.byId('access_consumer_key').value;
+        params.oauth_consumer_key = dojo.byId('consumer_key').value;
         params.oauth_version = oauth_version;
         params.oauth_signature_method = oauth_signature_method;
 
@@ -32,7 +32,7 @@ function get_by_url(e) {
         var access_token_secret = dojo.byId('access_token_secret').value;
 
         var req_method = method.toUpperCase();
-        var consumer_secret = dojo.byId('access_consumer_secret').value;
+        var consumer_secret = dojo.byId('consumer_secret').value;
 
         var message = {
             method: req_method,
@@ -118,13 +118,10 @@ function authorize(e) {
 
             parameters = OAuth.decodeForm(response);
             //console.log(parameters);
-            for (key in parameters)
-            if (parameters[key][0] == 'oauth_token') dojo.byId('oauth_token').value = parameters[key][1];
-            else dojo.cookie(parameters[key][0], parameters[key][1]);
-
-            dojo.cookie('oauth_consumer_key', params.oauth_consumer_key);
-            dojo.cookie('oauth_consumer_secret', consumer_secret);
-
+            for (key in parameters) {
+                if (parameters[key][0] == 'oauth_token') dojo.byId('access_token').value = parameters[key][1];
+                if (parameters[key][0] == 'oauth_token_secret') dojo.byId('access_token_secret').value = parameters[key][1];
+            }
         },
         error: function(error) {
             dojo.empty('result');
