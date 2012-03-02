@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <title>greatiful client</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">    
+</head>
+<body>
+    <div class="container">
+        <form name="api_settings" class="form-inline">            
+            <fieldset>
+                <legend>Authorization</legend>
+                <div class="control-group">
+                    <input id="host" type="text" placeholder="Host" value="http://greatiful.local">
+                    <input id="consumer_key" type="text" placeholder="Key" value="key1">
+                    <input id="consumer_secret" type="text" placeholder="Secret" value="secret1">
+                </div>
+                <div class="control-group">
+                    <input id="xauth_username" type="text" placeholder="Username" value="k@k.ru">
+                    <input id="xauth_password" type="text" placeholder="Password" value="1">
+                </div>         
+                <div class="form-actions">
+                    <button class="btn btn-primary" id="authorize">Authenticate</button>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>API Testing</legend>
+                <div class="control-group">
+                    <input type='text' id='url' placeholder="Url" value="/api/">
+                    <select id="method">
+                            <option value="get" selected> get </option>
+                            <option value="post"> post </option>
+                            <option value="put"> put </option>
+                            <option value="delete"> delete </option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <textarea id="params" cols="80" rows="10"> {} </textarea>
+                </div> 
+                <div class="control-group">
+                    <label> Use Auth </label>
+                    <input type="checkbox" id="use_auth">
+                    <input type="text" id="access_token" placeholder="Access Token">
+                    <input type="text" id="access_token_secret" placeholder="Access Token Secret">
+                </div>         
+                <div class="form-actions">
+                    <button class="btn btn-primary" id="get_response">Get Response</button>
+                </div>
+            </fieldset> 
+        </form>        
+        <hr>
+        <textarea class="input-xlarge" id="response" cols="100" rows="10"></textarea>
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojo/dojo.xd.js" type="text/javascript" 
+        djConfig="parseOnLoad:true"></script>
+    <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script> 
+    <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
